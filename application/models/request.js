@@ -21,11 +21,12 @@ var schema = mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    status: {
+        type: String,
+        enum: ['OPENED', 'CLOSED'],
+        default: 'OPENED'
+    },
     closed: {
-        response: {
-            type: Boolean,
-            required: true
-        },
         by: String,
         worked_minutes: Number
     }
